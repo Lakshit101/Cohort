@@ -1,0 +1,2 @@
+1) link se data lene k liye response.json ka use(link is given)
+2)  json ko parse krne k liye jsom.parse

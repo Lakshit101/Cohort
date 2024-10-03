@@ -1,0 +1,32 @@
+<html>
+    <script>
+        // function  Calculate2(app){
+            // const a= document.getElementById("Firstnumber").value;
+            // const b=  document.getElementById("Secondnumber").value;
+            // fetch("http://localhost:3000/sum?a=" +a + "&b=" +b)
+            // .then(function(response){
+            //     console.log(response);
+            //     response.text()
+            //     .then(function(ans){
+            //         document.getElementById("finalsum").innerhtml = ans
+            //     })
+            // });
+            // const element=document.getElementById("finalsum");
+            // element.innerHTML=parseInt(a)+parseInt(b);//string will covert into number
+        // }
+      async function Calculate(){
+           const a=document.getElementById("Firstnumber").value;
+           const b=document.getElementById("Secondnumber").value;
+           const response = await fetch("http://localhost:3000/sum?a=" +a + "&b=" +b);
+
+
+           const ans=await response.text();
+           document.getElementById("finalsum").innerHTML=ans;
+
+        }
+    </script>
+   <input type="text" id="Firstnumber" placeholder="First Number"><br><br>
+   <input type="text" id="Secondnumber" placeholder="Second Number"><br><br>
+    <button onclick="Calculate()" >Calculate</button><br><br>
+     <div id="finalsum"></div>
+</html>
